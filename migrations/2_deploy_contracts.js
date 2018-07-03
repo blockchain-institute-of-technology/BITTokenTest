@@ -7,12 +7,15 @@ module.exports = function(deployer, network, accounts) {
     const rate = new web3.BigNumber(2);
     const wallet = accounts[0];
 
+    //Estimated Cost = ETH .251 
     return deployer
         .then(() => {
+            //Ropsten Gas Cost: 1939523 --> .1939 ETH 
             return deployer.deploy(BITTokenTest);
         })
         .then(() => {
             return deployer.deploy(
+                //Ropsten Gas cost: 571783 --> .0571 ETH 
                 BITTokenTestCrowdsale,
                 cap,
                 rate,
