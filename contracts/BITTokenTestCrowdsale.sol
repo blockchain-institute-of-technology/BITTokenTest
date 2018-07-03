@@ -1,4 +1,4 @@
-pragma solidity 0.4.19;
+pragma solidity ^0.4.19;
 
 import './BITTokenTest.sol';
 import 'zeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol';
@@ -6,8 +6,8 @@ import 'zeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol';
 
 
 contract BITTokenTestCrowdsale is CappedCrowdsale, MintedCrowdsale {
-    function BITTokenTestCrowdsale
-        (
+    constructor
+        (   
             uint256 _cap,
             uint256 _rate,
             address _wallet,
