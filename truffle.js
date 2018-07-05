@@ -10,16 +10,16 @@ module.exports = {
     },
     ropsten: { 
      	provider: function() {
-     		return new HDWalletProvider(process.env.TEST_WALLET_MNEMONIC, `https://ropsten.infura.io/${process.env.INFURA_API_KEY}`, 0)
+     		return new HDWalletProvider(process.env.WALLET_MNEMONIC, `https://ropsten.infura.io/${process.env.INFURA_API_KEY}`, 0)
      	},
       	gas:3000000,
       	network_id: 3
     },
     live: {
     	provider: function() {
-    		return new HDWalletProvider(process.env.WALLET_MNEMONIC, `https://ropsten.infura.io/${process.env.INFURA_API_KEY}`)
+    		return new HDWalletProvider(process.env.WALLET_MNEMONIC, `https://mainnet.infura.io/${process.env.INFURA_API_KEY}`)
     	},
-      	gas:3000000,
+      gas:3000000,
      	network_id: 1
     }
   }
