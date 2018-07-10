@@ -10,7 +10,7 @@ contract EthAirDrop {
 
 	event Refund(address refundee, uint value);
 
-	constructor(address tokenAddress) {
+	constructor(address tokenAddress) payable {
 		myToken = ERC20(tokenAddress);
 	}
 
@@ -25,5 +25,8 @@ contract EthAirDrop {
 		balance = balance.div(200);
 		msg.sender.transfer(balance);
 		Refund(msg.sender, balance);
+	}
+	function () payable {
+
 	}
 }
